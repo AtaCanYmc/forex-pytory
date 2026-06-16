@@ -8,8 +8,8 @@ forex-scrapper --source forex --format json
 echo -e "\n2. Fetching Crypto Craft events for today in table format:"
 forex-scrapper --source forex --date 2026-05-20 --format table
 
-echo -e "\n3. Fetching Crypto Craft events for a specific date (2026-05-17) in table format:"
-forex-scrapper --source crypto --date 2026-05-17 --format table
+echo -e "\n3. Fetching Crypto Craft events for a specific date (2026-05-20) in table format:"
+forex-scrapper --source crypto --date 2026-05-20 --format table
 
 echo -e "\n4. Fetching Energy Exch events for a specific date (2026-05-20) in table format:"
 forex-scrapper --source energy --date 2026-05-20 --format table
