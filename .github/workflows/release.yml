@@ -1,0 +1,73 @@
+name: Release / CD
+
+# Yalnızca 'v' ile başlayan etiketler (tag'ler) push edildiğinde tetiklenir (örn: v1.0.0, v1.2.3)
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  # 1. Adım: Paketi Derle (Build Package)
+  build:
+    name: Build Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu İndir (Checkout Code)
+        uses: actions/checkout@v4
+
+      - name: Python Kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Build Araçlarını Kur
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+
+      - name: Kaynak (sdist) ve Wheel Dağıtımlarını Oluştur
+        run: |
+          python -m build
+
+      # Derlenen paketleri bir sonraki job'da (publish) kullanmak için artifact olarak yüklüyoruz
+      - name: Derlenen Paketleri Geçici Olarak Yükle (Upload Artifacts)
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-packages
+          path: dist/
+
+  # 2. Adım: PyPI ve GitHub Release Üzerinde Yayınla (Publish)
+  publish:
+    name: Publish to PyPI & GitHub Releases
+    needs: build
+    runs-on: ubuntu-latest
+
+    # PyPI OIDC güvenliği ve GitHub Releases için gerekli izinler
+    permissions:
+      id-token: write  # OIDC ile PyPI kimlik doğrulaması için zorunlu (Trusted Publishers)
+      contents: write  # GitHub Releases oluşturabilmek için gerekli
+
+    steps:
+      - name: Kodu İndir (Checkout Code)
+        uses: actions/checkout@v4
+
+      # Önceki job'dan derlenen paketleri (artifacts) indiriyoruz
+      - name: Derlenen Paketleri İndir (Download Artifacts)
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-packages
+          path: dist/
+
+      # Trusted Publishers (OIDC) yöntemiyle paketi güvenli bir şekilde PyPI'a yüklüyoruz
+      - name: PyPI'a Yayınla (Publish to PyPI)
+        uses: pypa/gh-action-pypi-publish@release/v1
+        # NOT: Bu adımın çalışabilmesi için PyPI projenizin ayarlarında, bu GitHub reposunun
+        # "Trusted Publisher" olarak eklenmiş olması gerekmektedir. (Parola veya token kullanmaz).
+
+      # GitHub üzerinde otomatik olarak yeni bir Release sekmesi oluşturur
+      # ve derlenen paketlerimizi (tar.gz, whl) bu release'e asset olarak ekler.
+      - name: GitHub Release Oluştur (Create GitHub Release)
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
