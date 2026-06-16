@@ -6,7 +6,7 @@ from mcp.server.models import InitializationOptions
 import mcp.server.stdio
 import mcp.types as types
 
-from forex_pytory.core.scrapper import (
+from src.forex_pytory.core.scrapper import (
     forex_factory_scrapper,
     crypto_craft_scrapper,
     energy_exch_scrapper,
@@ -17,6 +17,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("forex-pytory-mcp")
 
 server = Server("forex-pytory")
+
 
 @server.list_tools()
 async def handle_list_tools() -> list[types.Tool]:
@@ -42,9 +43,10 @@ async def handle_list_tools() -> list[types.Tool]:
         )
     ]
 
+
 @server.call_tool()
 async def handle_call_tool(
-    name: str, arguments: dict | None
+        name: str, arguments: dict | None
 ) -> list[types.TextContent | types.ImageContent | types.EmbeddedResource]:
     if name != "fetch_economic_events":
         raise ValueError(f"Unknown tool: {name}")
@@ -77,7 +79,7 @@ async def handle_call_tool(
 
     scrapper = scrappers[source]
     url = scrapper.get_url(day=day, month=month, year=year, timeline="day")
-    
+
     try:
         records = scrapper.get_records(url)
     except Exception as e:
@@ -91,6 +93,7 @@ async def handle_call_tool(
             text=result_json
         )
     ]
+
 
 async def run_server():
     async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
@@ -107,6 +110,8 @@ async def run_server():
             ),
         )
 
+
 if __name__ == "__main__":
     import asyncio
+
     asyncio.run(run_server())
