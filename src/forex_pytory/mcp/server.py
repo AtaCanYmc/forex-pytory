@@ -6,11 +6,11 @@ from mcp.server.models import InitializationOptions
 import mcp.server.stdio
 import mcp.types as types
 
-from src.forex_pytory.core.scrapper import (
-    forex_factory_scrapper,
-    crypto_craft_scrapper,
-    energy_exch_scrapper,
-    metals_mine_scrapper,
+from src.forex_pytory.core.scraper import (
+    forex_factory_scraper,
+    crypto_craft_scraper,
+    energy_exch_scraper,
+    metals_mine_scraper,
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -70,18 +70,18 @@ async def handle_call_tool(
         dt = datetime.now()
         day, month, year = dt.day, dt.month, dt.year
 
-    scrappers = {
-        "forex": forex_factory_scrapper,
-        "crypto": crypto_craft_scrapper,
-        "energy": energy_exch_scrapper,
-        "metals": metals_mine_scrapper,
+    scrapers = {
+        "forex": forex_factory_scraper,
+        "crypto": crypto_craft_scraper,
+        "energy": energy_exch_scraper,
+        "metals": metals_mine_scraper,
     }
 
-    scrapper = scrappers[source]
-    url = scrapper.get_url(day=day, month=month, year=year, timeline="day")
+    scraper = scrapers[source]
+    url = scraper.get_url(day=day, month=month, year=year, timeline="day")
 
     try:
-        records = scrapper.get_records(url)
+        records = scraper.get_records(url)
     except Exception as e:
         logger.error(f"Scraping failed: {e}")
         return [types.TextContent(type="text", text=f"Error scraping data: {e}")]

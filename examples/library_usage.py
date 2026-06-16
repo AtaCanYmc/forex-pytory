@@ -1,22 +1,22 @@
 from datetime import datetime
-from src.forex_pytory.core.scrapper import (
-    forex_factory_scrapper,
-    crypto_craft_scrapper,
-    energy_exch_scrapper,
-    metals_mine_scrapper,
+from src.forex_pytory.core.scraper import (
+    forex_factory_scraper,
+    crypto_craft_scraper,
+    energy_exch_scraper,
+    metals_mine_scraper,
 )
 
 
-def run_scraper(name, scrapper_module, dt):
+def run_scraper(name, scraper_module, dt):
     print(f"\n{'=' * 40}")
     print(f"Scraping {name}")
     print(f"{'=' * 40}")
 
-    url = scrapper_module.get_url(day=dt.day, month=dt.month, year=dt.year, timeline="day")
+    url = scraper_module.get_url(day=dt.day, month=dt.month, year=dt.year, timeline="day")
     print(f"URL: {url}")
 
     try:
-        records = scrapper_module.get_records(url)
+        records = scraper_module.get_records(url)
         print(f"Found {len(records)} events:")
 
         # Sadece ilk 3 tanesini yazdıralım ki çok uzun olmasın
@@ -35,10 +35,10 @@ def main():
     dt = datetime.now()
 
     scrapers_to_run = [
-        ("Forex Factory", forex_factory_scrapper),
-        ("Crypto Craft", crypto_craft_scrapper),
-        ("Energy Exch", energy_exch_scrapper),
-        ("Metals Mine", metals_mine_scrapper),
+        ("Forex Factory", forex_factory_scraper),
+        ("Crypto Craft", crypto_craft_scraper),
+        ("Energy Exch", energy_exch_scraper),
+        ("Metals Mine", metals_mine_scraper),
     ]
 
     for name, module in scrapers_to_run:

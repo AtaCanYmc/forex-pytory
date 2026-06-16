@@ -2,11 +2,11 @@ import argparse
 import json
 import sys
 from datetime import datetime
-from ..core.scrapper import (
-    forex_factory_scrapper,
-    crypto_craft_scrapper,
-    energy_exch_scrapper,
-    metals_mine_scrapper,
+from ..core.scraper import (
+    forex_factory_scraper,
+    crypto_craft_scraper,
+    energy_exch_scraper,
+    metals_mine_scraper,
 )
 
 
@@ -30,18 +30,18 @@ def main():
         dt = datetime.now()
         day, month, year = dt.day, dt.month, dt.year
 
-    scrappers = {
-        "forex": forex_factory_scrapper,
-        "crypto": crypto_craft_scrapper,
-        "energy": energy_exch_scrapper,
-        "metals": metals_mine_scrapper,
+    scrapers = {
+        "forex": forex_factory_scraper,
+        "crypto": crypto_craft_scraper,
+        "energy": energy_exch_scraper,
+        "metals": metals_mine_scraper,
     }
 
-    scrapper = scrappers[args.source]
-    url = scrapper.get_url(day=day, month=month, year=year, timeline="day")
+    scraper = scrapers[args.source]
+    url = scraper.get_url(day=day, month=month, year=year, timeline="day")
 
     try:
-        records = scrapper.get_records(url)
+        records = scraper.get_records(url)
     except Exception as e:
         print(f"Error scraping data: {e}", file=sys.stderr)
         sys.exit(1)

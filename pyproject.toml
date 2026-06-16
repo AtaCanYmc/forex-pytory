@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.scripts]
-forex-scrapper = "forex_pytory.cli.main:main"
+forex-scraper = "forex_pytory.cli.main:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

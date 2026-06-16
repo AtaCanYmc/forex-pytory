@@ -53,14 +53,14 @@ Import the package into your own scripts or Jupyter Notebooks to power your fina
 
 ```python
 from datetime import datetime
-from forex_pytory.core.scrapper import forex_factory_scrapper
+from forex_pytory.core.scraper import forex_factory_scraper
 
 # 1. Generate the target URL for today
 dt = datetime.now()
-url = forex_factory_scrapper.get_url(day=dt.day, month=dt.month, year=dt.year, timeline="day")
+url = forex_factory_scraper.get_url(day=dt.day, month=dt.month, year=dt.year, timeline="day")
 
 # 2. Fetch and parse data (Returns a list of strictly typed Pydantic 'EconomicEvent' objects)
-records = forex_factory_scrapper.get_records(url)
+records = forex_factory_scraper.get_records(url)
 
 # 3. Access attributes safely
 for event in records[:3]:
@@ -68,13 +68,13 @@ for event in records[:3]:
 ```
 
 ### 2. Command Line Interface (CLI) Usage
-Upon installation, the global `forex-scrapper` command becomes available in your terminal.
+Upon installation, the global `forex-scraper` command becomes available in your terminal.
 
 **A. Modern Table View:**
 Use the `--format table` flag for a dynamic, color-coded terminal table. High-impact events are bold red, medium are yellow, etc.
 
 ```bash
-forex-scrapper --source forex --format table
+forex-scraper --source forex --format table
 ```
 
 <table align="center" style="border: none;">
@@ -92,7 +92,7 @@ forex-scrapper --source forex --format table
 Perfect for piping into `jq` or integrating with other shell scripts, use `--format json` (which is the default behavior).
 
 ```bash
-forex-scrapper --source crypto --format json
+forex-scraper --source crypto --format json
 ```
 
 ### 3. MCP Server (Agent Integration) Usage
