@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🎛️ FFS • FOREX FACTORY SCRAPPER</h1>
+  <h1>🎛️ FFS • FOREX PYTORY</h1>
   <p><b>Advanced, Modular, and MCP-Ready Economic Events Scraper Library</b></p>
   <br>
 
