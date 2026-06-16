@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🎛️ FFS • FOREX PYTORY</h1>
+  <h1>🎛️ • FOREX PYTORY</h1>
   <p><b>Advanced, Modular, and MCP-Ready Economic Events Scraper Library</b></p>
   <br>
 
@@ -13,7 +13,7 @@
 
 <br>
 
-**Forex-Pytory (FFS)** is an open-source Python package that provides a robust and elegant way to scrape core economic data, news releases, and calendar events from major financial markets. Designed for modern Python ecosystems, it offers seamless integration for automated trading bots, data analysis pipelines, and even AI agents.
+**Forex-Pytory** is an open-source Python package that provides a robust and elegant way to scrape core economic data, news releases, and calendar events from major financial markets. Designed for modern Python ecosystems, it offers seamless integration for automated trading bots, data analysis pipelines, and even AI agents.
 
 ## ✨ Key Features & Capabilities
 
@@ -53,7 +53,7 @@ Import the package into your own scripts or Jupyter Notebooks to power your fina
 
 ```python
 from datetime import datetime
-from forex_pytory.core.scraper import forex_factory_scraper
+from src.forex_pytory.core.scraper import forex_factory_scraper
 
 # 1. Generate the target URL for today
 dt = datetime.now()

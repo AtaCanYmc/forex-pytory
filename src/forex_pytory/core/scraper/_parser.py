@@ -120,13 +120,17 @@ def _extract_start_date(start_row, url, table):
         try:
             day = int(m.group(2))
         except Exception as e:
-            logger.error("Failed to extract day from date text: %s. Error: %s", dt_text, e)
+            logger.error(
+                "Failed to extract day from date text: %s. Error: %s", dt_text, e
+            )
             day = None
         if m.group(3):
             try:
                 year = int(m.group(3))
             except Exception as e:
-                logger.error("Failed to extract year from date text: %s. Error: %s", dt_text, e)
+                logger.error(
+                    "Failed to extract year from date text: %s. Error: %s", dt_text, e
+                )
                 year = None
 
     # Try to find year in url
@@ -146,7 +150,11 @@ def _extract_start_date(start_row, url, table):
             try:
                 year = int(yr2.group(1))
             except Exception as e:
-                logger.error("Failed to parse year from table text: %s. Error: %s", table.get_text(), e)
+                logger.error(
+                    "Failed to parse year from table text: %s. Error: %s",
+                    table.get_text(),
+                    e,
+                )
                 year = None
 
     if year is None:
@@ -161,7 +169,9 @@ def _extract_start_date(start_row, url, table):
                 month = BASE_MONTH_NUMBERS.get(m2.group(2)[:3].title())
                 year = int(m2.group(3))
             except Exception as e:
-                logger.error("Failed to parse alternative date format: %s. Error: %s", dt_text, e)
+                logger.error(
+                    "Failed to parse alternative date format: %s. Error: %s", dt_text, e
+                )
                 pass
 
     if month is None or day is None:
@@ -222,8 +232,8 @@ def _find_impact_node(cell):
     for tag in cell.find_all(True):
         classes = tag.get("class") or []
         if any(
-                re.search(r"icon|impact|calendar__impact-icon|icon--ff-impact", c)
-                for c in classes
+            re.search(r"icon|impact|calendar__impact-icon|icon--ff-impact", c)
+            for c in classes
         ):
             return tag
 
@@ -262,8 +272,8 @@ def _normalize_impact_value(node):
 
     # Look for known markers
     if re.search(
-            r"\b(yel|yellow|impact.*yel|impact.*yellow|impact-yel|ee-impact-yel)\b",
-            combined,
+        r"\b(yel|yellow|impact.*yel|impact.*yellow|impact-yel|ee-impact-yel)\b",
+        combined,
     ):
         return "low"
     if re.search(r"\b(ora|orange|impact.*ora|impact.*orange|impact-ora)\b", combined):
@@ -383,6 +393,7 @@ def parse_calendar_from_html(html, url):
 
     try:
         from ..models import EconomicEvent
+
         return [EconomicEvent(**rec) for rec in recs]
     except Exception as e:
         logger.exception("Failed to convert records to Models. Error: %s", e)

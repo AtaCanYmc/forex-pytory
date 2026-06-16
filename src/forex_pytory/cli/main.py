@@ -12,10 +12,23 @@ from ..core.scraper import (
 
 def main():
     parser = argparse.ArgumentParser(description="Scrape economic events.")
-    parser.add_argument("--source", type=str, choices=["forex", "crypto", "energy", "metals"], default="forex",
-                        help="Source to scrape")
-    parser.add_argument("--date", type=str, help="Date to scrape in YYYY-MM-DD format (default: today)")
-    parser.add_argument("--format", type=str, choices=["json", "table"], default="json", help="Output format")
+    parser.add_argument(
+        "--source",
+        type=str,
+        choices=["forex", "crypto", "energy", "metals"],
+        default="forex",
+        help="Source to scrape",
+    )
+    parser.add_argument(
+        "--date", type=str, help="Date to scrape in YYYY-MM-DD format (default: today)"
+    )
+    parser.add_argument(
+        "--format",
+        type=str,
+        choices=["json", "table"],
+        default="json",
+        help="Output format",
+    )
 
     args = parser.parse_args()
 
@@ -55,10 +68,14 @@ def main():
 
         console = Console()
         if not records:
-            console.print(Panel("[yellow]No records found.[/yellow]", title="Economic Events"))
+            console.print(
+                Panel("[yellow]No records found.[/yellow]", title="Economic Events")
+            )
             return
 
-        table = Table(title=f"Economic Events ({args.source.title()}) - {args.date or 'Today'}")
+        table = Table(
+            title=f"Economic Events ({args.source.title()}) - {args.date or 'Today'}"
+        )
         table.add_column("ID", style="dim", no_wrap=True)
         table.add_column("Time", style="cyan", no_wrap=True)
         table.add_column("Currency", style="magenta", no_wrap=True)
@@ -85,7 +102,7 @@ def main():
                 f"[{impact_style}]{r.impact or ''}[/]",
                 r.forecast or "",
                 r.actual or "",
-                r.previous or ""
+                r.previous or "",
             )
 
         console.print(table)

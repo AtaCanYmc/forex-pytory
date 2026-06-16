@@ -31,22 +31,22 @@ async def handle_list_tools() -> list[types.Tool]:
                     "source": {
                         "type": "string",
                         "description": "Source to scrape",
-                        "enum": ["forex", "crypto", "energy", "metals"]
+                        "enum": ["forex", "crypto", "energy", "metals"],
                     },
                     "date": {
                         "type": "string",
-                        "description": "Date to scrape in YYYY-MM-DD format. If omitted, uses today's date."
-                    }
+                        "description": "Date to scrape in YYYY-MM-DD format. If omitted, uses today's date.",
+                    },
                 },
-                "required": ["source"]
-            }
+                "required": ["source"],
+            },
         )
     ]
 
 
 @server.call_tool()
 async def handle_call_tool(
-        name: str, arguments: dict | None
+    name: str, arguments: dict | None
 ) -> list[types.TextContent | types.ImageContent | types.EmbeddedResource]:
     if name != "fetch_economic_events":
         raise ValueError(f"Unknown tool: {name}")
@@ -87,12 +87,7 @@ async def handle_call_tool(
         return [types.TextContent(type="text", text=f"Error scraping data: {e}")]
 
     result_json = json.dumps([r.model_dump(by_alias=True) for r in records], indent=2)
-    return [
-        types.TextContent(
-            type="text",
-            text=result_json
-        )
-    ]
+    return [types.TextContent(type="text", text=result_json)]
 
 
 async def run_server():

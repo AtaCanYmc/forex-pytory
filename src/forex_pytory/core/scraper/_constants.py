@@ -1,4 +1,5 @@
 """Shared constants for scrapers: month name/number mappings and small config values."""
+
 BASE_MONTH_NAMES = {
     1: "Jan",
     2: "Feb",
