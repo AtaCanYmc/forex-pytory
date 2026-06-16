@@ -49,20 +49,46 @@ def main():
     if args.format == "json":
         print(json.dumps([r.model_dump(by_alias=True) for r in records], indent=2))
     else:
-        # Simple table format
+        from rich.console import Console
+        from rich.table import Table
+        from rich.panel import Panel
+
+        console = Console()
         if not records:
-            print("No records found.")
+            console.print(Panel("[yellow]No records found.[/yellow]", title="Economic Events"))
             return
 
-        headers = ["ID", "Time", "Currency", "Event", "Impact", "Forecast", "Actual", "Previous"]
-        row_format = "{:<15} | {:<10} | {:<8} | {:<40} | {:<8} | {:<10} | {:<10} | {:<10}"
-        print(row_format.format(*headers))
-        print("-" * 120)
+        table = Table(title=f"Economic Events ({args.source.title()}) - {args.date or 'Today'}")
+        table.add_column("ID", style="dim", no_wrap=True)
+        table.add_column("Time", style="cyan", no_wrap=True)
+        table.add_column("Currency", style="magenta", no_wrap=True)
+        table.add_column("Event", style="green")
+        table.add_column("Impact")
+        table.add_column("Forecast")
+        table.add_column("Actual", justify="right")
+        table.add_column("Previous", justify="right")
+
         for r in records:
-            print(row_format.format(
-                r.id or "", r.time or "", r.currency or "", (r.event or "")[:38],
-                r.impact or "", r.forecast or "", r.actual or "", r.previous or ""
-            ))
+            impact_style = "default"
+            if r.impact == "high":
+                impact_style = "bold red"
+            elif r.impact == "medium":
+                impact_style = "bold yellow"
+            elif r.impact == "low":
+                impact_style = "yellow"
+
+            table.add_row(
+                r.id or "",
+                r.time or "",
+                r.currency or "",
+                r.event or "",
+                f"[{impact_style}]{r.impact or ''}[/]",
+                r.forecast or "",
+                r.actual or "",
+                r.previous or ""
+            )
+
+        console.print(table)
 
 
 if __name__ == "__main__":
