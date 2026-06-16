@@ -43,7 +43,7 @@ jobs:
       - name: Mypy ile Tip Kontrolü (Static Type Checking)
         run: |
           # Pydantic modellerimizin tiplerinin sıkı şekilde kontrol edilmesi
-          mypy src/ --ignore-missing-imports
+          cd src && mypy forex_pytory --ignore-missing-imports
 
   # 2. Adım: Çoklu Sürüm Testleri (Multi-Version Testing)
   test:

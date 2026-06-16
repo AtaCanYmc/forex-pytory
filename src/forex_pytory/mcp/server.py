@@ -106,7 +106,11 @@ async def run_server():
         )
 
 
-if __name__ == "__main__":
+def main():
     import asyncio
 
     asyncio.run(run_server())
+
+
+if __name__ == "__main__":
+    main()
