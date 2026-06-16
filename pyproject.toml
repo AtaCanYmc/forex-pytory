@@ -6,6 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "forex-pytory"
 version = "0.1.0"
 description = "A scraper for economic calendars (ForexFactory, CryptoCraft, EnergyExch, MetalsMine)."
+authors = [
+    { name = "Atacan", email = "atacanymc@gmail.com" }
+]
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [

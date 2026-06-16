@@ -79,12 +79,12 @@ forex-scraper --source forex --format table
 
 <table align="center" style="border: none;">
   <tr style="border: none;">
-    <td style="border: none;"><img src="images/cli_example_1.png" width="100%" alt="CLI Example 1"></td>
-    <td style="border: none;"><img src="images/cli_example_2.png" width="100%" alt="CLI Example 2"></td>
+    <td style="border: none;"><img src="https://github.com/AtaCanYmc/forex-pytory/blob/main/images/cli_example_1.png" width="100%" alt="CLI Example 1"></td>
+    <td style="border: none;"><img src="https://github.com/AtaCanYmc/forex-pytory/blob/main/images/cli_example_2.png" width="100%" alt="CLI Example 2"></td>
   </tr>
   <tr style="border: none;">
-    <td style="border: none;"><img src="images/cli_example_3.png" width="100%" alt="CLI Example 3"></td>
-    <td style="border: none;"><img src="images/cli_example_4.png" width="100%" alt="CLI Example 4"></td>
+    <td style="border: none;"><img src="https://github.com/AtaCanYmc/forex-pytory/blob/main/images/cli_example_3.png" width="100%" alt="CLI Example 3"></td>
+    <td style="border: none;"><img src="https://github.com/AtaCanYmc/forex-pytory/blob/main/images/cli_example_4.png" width="100%" alt="CLI Example 4"></td>
   </tr>
 </table>
 
