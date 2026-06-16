@@ -1,0 +1,2 @@
+[console_scripts]
+forex-scrapper = forex_pytory.cli.main:main
