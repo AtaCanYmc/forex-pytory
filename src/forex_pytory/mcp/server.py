@@ -6,7 +6,7 @@ from mcp.server.models import InitializationOptions
 import mcp.server.stdio
 import mcp.types as types
 
-from src.forex_pytory.core.scraper import (
+from ..core.scraper import (
     forex_factory_scraper,
     crypto_craft_scraper,
     energy_exch_scraper,
