@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "forex-pytory"
-version = "0.1.0"
+version = "0.1.1"
 description = "A scraper for economic calendars (ForexFactory, CryptoCraft, EnergyExch, MetalsMine)."
 authors = [
     { name = "Atacan", email = "atacanymc@gmail.com" }
