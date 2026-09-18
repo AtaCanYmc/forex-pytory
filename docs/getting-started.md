@@ -13,16 +13,30 @@ This guide walks through installing `forex-pytory` and setting up your local env
 
 ## Installation
 
-### From Source
+### Via pip (Recommended)
 
-Clone the repository and install the base package in editable mode:
+Install the package directly from PyPI:
+
+```bash
+pip install forex-pytory
+```
+
+To include development and documentation dependencies:
+
+```bash
+pip install "forex-pytory[dev,docs]"
+```
+
+### From Source (Development)
+
+Clone the repository and install in editable mode:
 
 ```bash
 git clone https://github.com/AtaCanYmc/forex-pytory.git
 cd forex-pytory
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -e .
+pip install -e ".[dev,docs]"
 ```
 
 ### Optional Extras
