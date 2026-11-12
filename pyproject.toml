@@ -12,12 +12,12 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "beautifulsoup4~=4.12.3",
+    "beautifulsoup4>=4.12.3,<4.16.0",
     "cloudscraper~=1.2.71",
-    "pandas~=2.2.2",
+    "pandas>=2.2.2,<2.4.0",
     "defusedxml",
     "pydantic>=2.0",
-    "mcp>=0.1.0,<2.0.0",
+    "mcp>=0.1.0,<3.0.0",
     "rich>=13.0.0",
 ]
 
