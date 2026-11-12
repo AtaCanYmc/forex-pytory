@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Kodu İndir (Checkout Code)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Python Kurulumu
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.10"
 
@@ -31,7 +31,7 @@ jobs:
 
       # Derlenen paketleri bir sonraki job'da (publish) kullanmak için artifact olarak yüklüyoruz
       - name: Derlenen Paketleri Geçici Olarak Yükle (Upload Artifacts)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: dist-packages
           path: dist/
@@ -49,11 +49,11 @@ jobs:
 
     steps:
       - name: Kodu İndir (Checkout Code)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # Önceki job'dan derlenen paketleri (artifacts) indiriyoruz
       - name: Derlenen Paketleri İndir (Download Artifacts)
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: dist-packages
           path: dist/
@@ -67,7 +67,7 @@ jobs:
       # GitHub üzerinde otomatik olarak yeni bir Release sekmesi oluşturur
       # ve derlenen paketlerimizi (tar.gz, whl) bu release'e asset olarak ekler.
       - name: GitHub Release Oluştur (Create GitHub Release)
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: dist/*
           generate_release_notes: true
