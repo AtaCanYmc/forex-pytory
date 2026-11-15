@@ -1,5 +1,5 @@
 from datetime import datetime
-from src.forex_pytory.core.scraper import (
+from forex_pytory.core.scraper import (
     forex_factory_scraper,
     crypto_craft_scraper,
     energy_exch_scraper,
@@ -19,7 +19,7 @@ def run_scraper(name, scraper_module, dt):
         records = scraper_module.get_records(url)
         print(f"Found {len(records)} events:")
 
-        # Sadece ilk 3 tanesini yazdıralım ki çok uzun olmasın
+        # Print the first 3 events for brevity
         for r in records[:3]:
             # r is a Pydantic model (EconomicEvent)
             print(f"[{r.time}] {r.currency} - {r.event[:30]}... (Impact: {r.impact})")

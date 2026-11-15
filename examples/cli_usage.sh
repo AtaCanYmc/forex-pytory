@@ -5,7 +5,7 @@
 echo "1. Fetching Forex Factory events for today in JSON format (default):"
 forex-scraper --source forex --format json
 
-echo -e "\n2. Fetching Crypto Craft events for today in table format:"
+echo -e "\n2. Fetching Forex Factory events for a specific date (2026-05-20) in table format:"
 forex-scraper --source forex --date 2026-05-20 --format table
 
 echo -e "\n3. Fetching Crypto Craft events for a specific date (2026-05-20) in table format:"

@@ -17,12 +17,12 @@ install-dev: ## Install package with development and documentation tools
 	$(PIP) install -e ".[dev,docs]"
 
 lint: ## Run code quality linters (flake8, black check, mypy)
-	$(PYTHON) -m flake8 src/
-	$(PYTHON) -m black --check src/
-	$(PYTHON) -m mypy src/
+	$(PYTHON) -m flake8 src/ tests/
+	$(PYTHON) -m black --check src/ tests/
+	$(PYTHON) -m mypy src/ tests/
 
 format: ## Format codebase with Black
-	$(PYTHON) -m black src/
+	$(PYTHON) -m black src/ tests/
 
 test: ## Run unit tests with pytest
 	@if [ -d "tests" ]; then \

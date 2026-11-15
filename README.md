@@ -30,6 +30,7 @@ A Python library, CLI, and Model Context Protocol (MCP) server for extracting st
 - [Data Schema](#data-schema)
 - [Development & Testing](#development--testing)
 - [Technical FAQ](#technical-faq)
+- [Governance & Security](#governance--security)
 - [License & Disclaimer](#license--disclaimer)
 
 ---
@@ -247,6 +248,14 @@ The source portals display timestamps according to the session timezone cookie. 
 
 #### How does the MCP server communicate with AI agents?
 `forex-mcp` implements the standard Model Context Protocol over `stdio`. The agent sends JSON-RPC requests via stdin and receives validated JSON responses via stdout. Logging is redirected to `stderr` to avoid corrupting protocol streams.
+
+---
+
+## Governance & Security
+
+- **Contributing**: Review [CONTRIBUTING.md](CONTRIBUTING.md) for Conventional Commits standards, branch rules, and verification checklists.
+- **Security Policy**: For vulnerability reporting workflows and response SLAs, see [SECURITY.md](SECURITY.md).
+- **Roadmap**: Track completed features and future technical milestones in [ROADMAP.md](ROADMAP.md).
 
 ---
 

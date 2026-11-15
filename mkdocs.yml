@@ -1,6 +1,6 @@
 site_name: Forex-Pytory
 site_url: https://atacanymc.github.io/forex-pytory/
-site_description: Advanced, Modular, and MCP-Ready Economic Events Scraper Library
+site_description: Python library, CLI, and MCP server for scraping economic calendars across Forex, Cryptocurrency, Energy, and Metals markets.
 site_author: Atacan
 repo_name: AtaCanYmc/forex-pytory
 repo_url: https://github.com/AtaCanYmc/forex-pytory

@@ -1,5 +1,5 @@
 import asyncio
-from src.forex_pytory.mcp.server import run_server
+from forex_pytory.mcp.server import run_server
 
 if __name__ == "__main__":
     print("Starting MCP Server...")
