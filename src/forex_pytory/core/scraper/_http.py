@@ -1,4 +1,5 @@
 import logging
+from urllib.parse import urlparse
 import cloudscraper
 
 logger = logging.getLogger(__name__)
@@ -9,6 +10,12 @@ def get_page_html(url, timeout=10):
 
     Raises RuntimeError on network errors (keeps behaviour of previous scrapers).
     """
+    parsed = urlparse(url)
+    if parsed.scheme not in ("http", "https"):
+        raise ValueError(
+            f"Invalid URL scheme: {parsed.scheme!r}. Only HTTP and HTTPS are allowed."
+        )
+
     scraper = cloudscraper.create_scraper()
     try:
         resp = scraper.get(url, timeout=timeout)

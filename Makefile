@@ -2,7 +2,7 @@
 PYTHON ?= python3
 PIP ?= $(PYTHON) -m pip
 
-.PHONY: help install install-dev lint format test docs-serve docs-build clean
+.PHONY: help install install-dev lint format test security docs-serve docs-build clean
 
 help: ## Display this help message
 	@echo "Usage: make [target]"
@@ -30,6 +30,10 @@ test: ## Run unit tests with pytest
 	else \
 		echo "No tests directory found. Run tests after adding tests."; \
 	fi
+
+security: ## Run security audits with Bandit and pip-audit
+	$(PYTHON) -m bandit -r src/
+	$(PYTHON) -m pip_audit
 
 docs-serve: ## Start local MkDocs documentation server
 	$(PYTHON) -m mkdocs serve

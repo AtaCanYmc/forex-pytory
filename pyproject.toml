@@ -12,10 +12,10 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "beautifulsoup4~=4.12.3",
+    "beautifulsoup4>=4.12.3,<4.16.0",
     "cloudscraper~=1.2.71",
-    "pandas~=2.2.2",
-    "defusedxml",
+    "pandas>=2.2.2,<2.4.0",
+    "defusedxml>=0.7.1",
     "pydantic>=2.0",
     "mcp>=0.1.0,<2.0.0",
     "rich>=13.0.0",
@@ -32,6 +32,8 @@ dev = [
     "black>=23.0",
     "flake8>=6.0",
     "mypy>=1.0",
+    "bandit>=1.7.0",
+    "pip-audit>=2.7.0",
 ]
 docs = [
     "mkdocs-material>=9.5.0",

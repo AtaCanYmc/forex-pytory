@@ -35,3 +35,15 @@ def test_time_conversion():
 
     dt_all_day = to_24h(15, 9, 2026, "All Day")
     assert dt_all_day == datetime(2026, 9, 15, 0, 0)
+
+
+def test_url_scheme_validation():
+    import pytest
+    from forex_pytory.core.scraper._http import get_page_html
+    from forex_pytory.core.scraper.forexfactory_sitemap import fetch_url_text
+
+    with pytest.raises(ValueError, match="Invalid URL scheme"):
+        get_page_html("file:///etc/passwd")
+
+    with pytest.raises(ValueError, match="Invalid URL scheme"):
+        fetch_url_text("ftp://example.com/sitemap.xml")
