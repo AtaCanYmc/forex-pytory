@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.2](https://github.com/AtaCanYmc/forex-pytory/compare/v0.1.1...v0.1.2) (2026-11-15)
+
+
+### Bug Fixes
+
+* **security:** resolve dependency vulnerabilities and enforce URL scheme validation ([b882323](https://github.com/AtaCanYmc/forex-pytory/commit/b882323331de609ecb98db704fba2051ccfcddbc))
+
+
+### Documentation
+
+* apply well-document governance, audit fixes, and test suite ([f60394a](https://github.com/AtaCanYmc/forex-pytory/commit/f60394a463695b5e93732d9f5f26395b75a2873f))
+
 ## [0.1.1](https://github.com/AtaCanYmc/forex-pytory/compare/v0.1.0...v0.1.1) (2026-09-18)
 
 
