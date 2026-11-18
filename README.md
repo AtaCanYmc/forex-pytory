@@ -90,9 +90,18 @@ All target endpoints share identical table structures, parsed through specialize
 
 ### Prerequisites
 
-- Python 3.10 or higher
+- Python 3.10 or higher (for SDK usage)
 
-### Install via pip (Recommended)
+### Install via Homebrew (macOS / Linux CLI)
+
+Install the standalone CLI and MCP server tools via the official tap:
+
+```bash
+brew tap AtaCanYmc/tap
+brew install forex-pytory
+```
+
+### Install via pip (Python SDK)
 
 Install the latest release directly from PyPI:
 

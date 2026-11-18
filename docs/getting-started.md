@@ -13,7 +13,16 @@ This guide walks through installing `forex-pytory` and setting up your local env
 
 ## Installation
 
-### Via pip (Recommended)
+### Via Homebrew (macOS / Linux CLI)
+
+Install the pre-configured CLI and MCP binary via the official tap:
+
+```bash
+brew tap AtaCanYmc/tap
+brew install forex-pytory
+```
+
+### Via pip (Python SDK)
 
 Install the package directly from PyPI:
 
