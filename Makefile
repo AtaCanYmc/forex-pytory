@@ -13,8 +13,8 @@ help: ## Display this help message
 install: ## Install package in editable mode
 	$(PIP) install -e .
 
-install-dev: ## Install package with development and documentation tools
-	$(PIP) install -e ".[dev,docs]"
+install-dev: ## Install package with development tools
+	$(PIP) install -e ".[dev]"
 
 lint: ## Run code quality linters (flake8, black check, mypy)
 	$(PYTHON) -m flake8 src/ tests/
@@ -35,11 +35,11 @@ security: ## Run security audits with Bandit and pip-audit
 	$(PYTHON) -m bandit -r src/
 	$(PYTHON) -m pip_audit
 
-docs-serve: ## Start local MkDocs documentation server
-	$(PYTHON) -m mkdocs serve
+docs-serve: ## Start local static documentation server
+	$(PYTHON) -m http.server 8000 --directory site
 
-docs-build: ## Build static HTML documentation with strict validation
-	$(PYTHON) -m mkdocs build --strict
+docs-build: ## Verify static documentation site assets
+	@test -f site/index.html && test -f site/style.css && test -f site/app.js && echo "Static documentation site assets verified in site/."
 
 clean: ## Remove build artifacts, cache files, and documentation output
 	rm -rf build/ dist/ *.egg-info .eggs/
