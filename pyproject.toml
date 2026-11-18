@@ -10,7 +10,7 @@ authors = [
     { name = "Atacan", email = "atacanymc@gmail.com" }
 ]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11.5"
 dependencies = [
     "beautifulsoup4>=4.12.3,<4.16.0",
     "cloudscraper~=1.2.71",

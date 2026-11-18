@@ -6,7 +6,7 @@ This guide walks through installing `forex-pytory` and setting up your local env
 
 ## Prerequisites
 
-- **Python**: Version 3.10 or higher.
+- **Python**: Version 3.11 or higher.
 - **Git**: Installed and configured.
 
 ---

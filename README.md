@@ -9,7 +9,7 @@ A Python library, CLI, and Model Context Protocol (MCP) server for extracting st
 [![CI Status](https://img.shields.io/github/actions/workflow/status/AtaCanYmc/forex-pytory/ci.yml?branch=main&style=flat-square)](https://github.com/AtaCanYmc/forex-pytory/actions)
 [![PyPI Version](https://img.shields.io/pypi/v/forex-pytory.svg?style=flat-square)](https://pypi.org/project/forex-pytory/)
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue?style=flat-square)](https://atacanymc.github.io/forex-pytory/)
-[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square&logo=python)](https://www.python.org/)
+[![Python Version](https://img.shields.io/badge/python-3.11%2B-blue?style=flat-square&logo=python)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg?style=flat-square)](LICENSE)
 [![Pydantic v2](https://img.shields.io/badge/Pydantic-v2-e92063?style=flat-square)](https://docs.pydantic.dev/)
 [![MCP Ready](https://img.shields.io/badge/MCP-Ready-orange?style=flat-square)](https://modelcontextprotocol.io/)
@@ -90,7 +90,7 @@ All target endpoints share identical table structures, parsed through specialize
 
 ### Prerequisites
 
-- Python 3.10 or higher (for SDK usage)
+- Python 3.11 or higher (for SDK usage)
 
 ### Install via Homebrew (macOS / Linux CLI)
 
