@@ -1,7 +1,14 @@
+import re
 import pytest
 from unittest.mock import patch
 import sys
+from forex_pytory import __version__
 from forex_pytory.cli.main import main
+
+
+def test_package_version():
+    assert isinstance(__version__, str)
+    assert re.match(r"^\d+\.\d+\.\d+", __version__)
 
 
 def test_cli_help(capsys):

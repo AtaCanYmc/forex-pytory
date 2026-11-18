@@ -6,6 +6,7 @@ from mcp.server.models import InitializationOptions
 import mcp.server.stdio
 import mcp.types as types
 
+from .. import __version__
 from ..core.scraper import (
     forex_factory_scraper,
     crypto_craft_scraper,
@@ -97,7 +98,7 @@ async def run_server():
             write_stream,
             InitializationOptions(
                 server_name="forex-pytory",
-                server_version="0.1.0",
+                server_version=__version__,
                 capabilities=server.get_capabilities(
                     notification_options=NotificationOptions(),
                     experimental_capabilities={},

@@ -5,7 +5,25 @@
       "release-type": "python",
       "package-name": "forex-pytory",
       "changelog-path": "CHANGELOG.md",
-      "include-component-in-tag": false
+      "include-component-in-tag": false,
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "Formula/forex-pytory.rb"
+        },
+        {
+          "type": "generic",
+          "path": "ROADMAP.md"
+        },
+        {
+          "type": "generic",
+          "path": "uv.lock"
+        },
+        {
+          "type": "generic",
+          "path": ".github/ISSUE_TEMPLATE/bug_report.yml"
+        }
+      ]
     }
   }
 }

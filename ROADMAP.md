@@ -4,7 +4,7 @@ This roadmap documents completed milestones and upcoming technical priorities fo
 
 ---
 
-## Current Release: v0.1.1
+## Current Release: v0.1.2 <!-- x-release-please-version -->
 
 - [x] Multi-source economic calendar extraction (ForexFactory, CryptoCraft, EnergyExch, MetalsMine).
 - [x] Standardized Pydantic v2 data model (`EconomicEvent`).
