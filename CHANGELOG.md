@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.0](https://github.com/AtaCanYmc/forex-pytory/compare/v0.1.2...v0.2.0) (2026-11-18)
+
+
+### Features
+
+* **brew:** add Homebrew formula and tap installation docs ([935d9a4](https://github.com/AtaCanYmc/forex-pytory/commit/935d9a4378ae531197d79f73ed2dc03a6f0dd3ed))
+* **docs:** replace mkdocs with bespoke premium documentation and interactive explorer ([010bb59](https://github.com/AtaCanYmc/forex-pytory/commit/010bb59434a7e87ab9461688f2176a1160f78e25))
+
+
+### Bug Fixes
+
+* **ci:** upgrade setuptools alongside pip to eliminate runner-level CVEs in security check ([728c1ee](https://github.com/AtaCanYmc/forex-pytory/commit/728c1ee55d60683d55fe8fea408ab63e3b5e3870))
+* **security:** resolve all 20 dependabot alerts by upgrading python baseline to 3.11.5+ and updating lockfile ([6dff499](https://github.com/AtaCanYmc/forex-pytory/commit/6dff49993f7ed631c17c9d22f45176483456f443))
+
 ## [0.1.2](https://github.com/AtaCanYmc/forex-pytory/compare/v0.1.1...v0.1.2) (2026-11-15)
 
 

@@ -3,7 +3,7 @@ class ForexPytory < Formula
 
   desc "Economic calendar scraper CLI and MCP server across financial markets"
   homepage "https://github.com/AtaCanYmc/forex-pytory"
-  url "https://github.com/AtaCanYmc/forex-pytory/archive/refs/tags/v0.1.2.tar.gz" # x-release-please-version
+  url "https://github.com/AtaCanYmc/forex-pytory/archive/refs/tags/v0.2.0.tar.gz" # x-release-please-version
   sha256 "334f391797c2179d71b578e73614054ca29ecf898cdb0b34670bd9b39c144341"
   license "Apache-2.0"
   head "https://github.com/AtaCanYmc/forex-pytory.git", branch: "main"
