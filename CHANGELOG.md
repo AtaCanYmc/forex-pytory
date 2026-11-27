@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/AtaCanYmc/forex-pytory/compare/v0.2.0...v0.2.1) (2026-11-27)
+
+
+### Documentation
+
+* redraw diagrams with diagram-design ([8717e98](https://github.com/AtaCanYmc/forex-pytory/commit/8717e98bac887be5cb037e1690d234ac8e816c99))
+
 ## [0.2.0](https://github.com/AtaCanYmc/forex-pytory/compare/v0.1.2...v0.2.0) (2026-11-18)
 
 
