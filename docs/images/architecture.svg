@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="architecture-title architecture-desc" id="architecture-root">
+        <title id="architecture-title">From portals to consumers</title>
+        <desc id="architecture-desc">Four-stage scraping pipeline from financial portals through validation, fanning out to CLI, Python SDK and MCP server.</desc>
+        <defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #architecture-root { --color-paper:   #f5f5f5;   
+      --color-ink:     #2d3142;   
+      --color-muted:   #4f5d75;   
+      --color-accent:  #bf4520;   
+      --font-sans:     'Geist', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', 'Noto Serif', 'Noto Serif KR', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace; }
+      #architecture-root { font-family: var(--font-sans); color: var(--color-ink); }
+      #architecture-root .diagram-container { width: 100%; overflow-x: auto; }
+      @media print {
+#architecture-root .diagram-container { overflow-x: visible; }
+}</style>
+          <marker id="architecture-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+          <marker id="architecture-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+          <marker id="architecture-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
+
+          <!-- OPTIONAL: dot-pattern background. Uncomment the <pattern> and the second <rect> below if you want the dotted paper look. -->
+          <!--
+          <pattern id="architecture-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.9" fill="rgba(45,49,66,0.10)"/>
+          </pattern>
+          -->
+        </defs>
+
+        <rect width="100%" height="100%" fill="#f5f5f5"/>
+        <!-- <rect width="100%" height="100%" fill="url(#architecture-dots)" opacity="0.55"/> -->
+
+        <path d="M230 100 H270" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#architecture-arrow)"/><path d="M460 100 H500" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#architecture-arrow)"/><path d="M690 100 H730" fill="none" stroke="#bf4520" stroke-width="1.2" marker-end="url(#architecture-arrow-accent)"/><path d="M778 140 V182 Q778 190 770 190 H508 Q500 190 500 198 V260" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#architecture-arrow)"/><path d="M826 140 V200 Q826 208 818 208 H708 Q700 208 700 216 V260" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#architecture-arrow)"/><path d="M874 140 V218 Q874 226 882 226 H892 Q900 226 900 234 V260" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#architecture-arrow)"/><rect x="40" y="60" width="190" height="80" rx="6" fill="#f5f5f5"/><rect x="40" y="60" width="190" height="80" rx="6" fill="#2d3142" stroke="#4f5d75" stroke-width="1" fill-opacity="0.04"/><text x="135.0" y="96.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">Financial Portals</text><text x="135.0" y="114.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">ForexFactory · CryptoCraft</text><rect x="270" y="60" width="190" height="80" rx="6" fill="#f5f5f5"/><rect x="270" y="60" width="190" height="80" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="365.0" y="96.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">HTTP Engine</text><text x="365.0" y="114.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">cloudscraper · HTML/HTTPS</text><rect x="500" y="60" width="190" height="80" rx="6" fill="#f5f5f5"/><rect x="500" y="60" width="190" height="80" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="595.0" y="96.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">DOM Parser</text><text x="595.0" y="114.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">BeautifulSoup4</text><rect x="730" y="60" width="190" height="80" rx="6" fill="#f5f5f5"/><rect x="730" y="60" width="190" height="80" rx="6" fill="#bf4520" stroke="#bf4520" stroke-width="1" fill-opacity="0.08"/><text x="825.0" y="96.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">Validation</text><text x="825.0" y="114.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">Pydantic v2 EconomicEvent</text><rect x="420" y="260" width="160" height="72" rx="6" fill="#f5f5f5"/><rect x="420" y="260" width="160" height="72" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="500.0" y="292.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">CLI Tool</text><text x="500.0" y="310.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">forex-scraper · Rich/JSON</text><rect x="620" y="260" width="160" height="72" rx="6" fill="#f5f5f5"/><rect x="620" y="260" width="160" height="72" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="700.0" y="292.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">Python SDK</text><text x="700.0" y="310.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">list[EconomicEvent]</text><rect x="820" y="260" width="160" height="72" rx="6" fill="#f5f5f5"/><rect x="820" y="260" width="160" height="72" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="900.0" y="292.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">MCP Server</text><text x="900.0" y="310.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">forex-mcp · JSON-RPC</text>
+
+      </svg>

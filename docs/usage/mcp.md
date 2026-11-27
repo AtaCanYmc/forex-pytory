@@ -8,21 +8,7 @@
 
 The MCP server runs locally and communicates with host applications over standard input and output (`stdio`):
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor User as User / Prompt
-    participant Agent as LLM Agent (Claude)
-    participant Server as forex-mcp Server
-    participant Scraper as Scraper Engine
-
-    User->>Agent: "What high-impact Forex releases are scheduled today?"
-    Agent->>Server: tools/call fetch_economic_events {"source": "forex"}
-    Server->>Scraper: Fetch calendar & parse DOM
-    Scraper-->>Server: list[EconomicEvent]
-    Server-->>Agent: JSON-RPC Result (Event Payload)
-    Agent-->>User: Summarized release report
-```
+![Sequence: user, LLM agent, forex-mcp, scraper](../images/mcp-sequence.svg)
 
 ---
 

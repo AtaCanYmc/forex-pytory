@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mcp-sequence-title mcp-sequence-desc" id="mcp-sequence-root">
+        <title id="mcp-sequence-title">How an agent queries forex-mcp</title>
+        <desc id="mcp-sequence-desc">Sequence of messages from a user prompt through an LLM agent and the forex-mcp server to the scraper and back.</desc>
+        <defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #mcp-sequence-root { --color-paper:   #f5f5f5;   
+      --color-ink:     #2d3142;   
+      --color-muted:   #4f5d75;   
+      --color-accent:  #bf4520;   
+      --font-sans:     'Geist', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', 'Noto Serif', 'Noto Serif KR', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace; }
+      #mcp-sequence-root { font-family: var(--font-sans); color: var(--color-ink); }
+      #mcp-sequence-root .diagram-container { width: 100%; overflow-x: auto; }
+      @media print {
+#mcp-sequence-root .diagram-container { overflow-x: visible; }
+}</style>
+          <marker id="mcp-sequence-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+          <marker id="mcp-sequence-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+          <marker id="mcp-sequence-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
+
+          <!-- OPTIONAL: dot-pattern background. Uncomment the <pattern> and the second <rect> below if you want the dotted paper look. -->
+          <!--
+          <pattern id="mcp-sequence-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.9" fill="rgba(45,49,66,0.10)"/>
+          </pattern>
+          -->
+        </defs>
+
+        <rect width="100%" height="100%" fill="#f5f5f5"/>
+        <!-- <rect width="100%" height="100%" fill="url(#mcp-sequence-dots)" opacity="0.55"/> -->
+
+        <line x1="130" y1="100" x2="130" y2="380" stroke="#2d3142" stroke-dasharray="3,3" stroke-opacity="0.20"/><line x1="370" y1="100" x2="370" y2="380" stroke="#2d3142" stroke-dasharray="3,3" stroke-opacity="0.20"/><line x1="610" y1="100" x2="610" y2="380" stroke="#2d3142" stroke-dasharray="3,3" stroke-opacity="0.20"/><line x1="850" y1="100" x2="850" y2="380" stroke="#2d3142" stroke-dasharray="3,3" stroke-opacity="0.20"/><line x1="130" y1="156" x2="369" y2="156" stroke="#4f5d75" stroke-width="1.2"  marker-end="url(#mcp-sequence-arrow)"/><text x="249.5" y="148" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">High-impact Forex releases today?</text><line x1="370" y1="196" x2="609" y2="196" stroke="#4f5d75" stroke-width="1.2"  marker-end="url(#mcp-sequence-arrow)"/><text x="489.5" y="188" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">tools/call fetch_economic_events</text><line x1="610" y1="236" x2="849" y2="236" stroke="#4f5d75" stroke-width="1.2"  marker-end="url(#mcp-sequence-arrow)"/><text x="729.5" y="228" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">Fetch calendar, parse DOM</text><line x1="850" y1="276" x2="611" y2="276" stroke="#4f5d75" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#mcp-sequence-arrow)"/><text x="730.5" y="268" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">list[EconomicEvent]</text><line x1="610" y1="316" x2="371" y2="316" stroke="#4f5d75" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#mcp-sequence-arrow)"/><text x="490.5" y="308" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">JSON-RPC result</text><line x1="370" y1="356" x2="131" y2="356" stroke="#bf4520" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#mcp-sequence-arrow-accent)"/><text x="250.5" y="348" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">Summarized release report</text><rect x="50" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/><rect x="50" y="40" width="160" height="56" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="130.0" y="64.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">User</text><text x="130.0" y="82.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">Prompt</text><rect x="290" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/><rect x="290" y="40" width="160" height="56" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="370.0" y="64.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">LLM Agent</text><text x="370.0" y="82.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">Claude</text><rect x="530" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/><rect x="530" y="40" width="160" height="56" rx="6" fill="#bf4520" stroke="#bf4520" stroke-width="1" fill-opacity="0.08"/><text x="610.0" y="64.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">forex-mcp</text><text x="610.0" y="82.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">MCP Server</text><rect x="770" y="40" width="160" height="56" rx="6" fill="#f5f5f5"/><rect x="770" y="40" width="160" height="56" rx="6" fill="#fff" stroke="#2d3142" stroke-width="1"/><text x="850.0" y="64.0" text-anchor="middle" font-family="Geist, sans-serif" font-size="13" font-weight="600" fill="#2d3142">Scraper</text><text x="850.0" y="82.0" text-anchor="middle" font-family="Geist Mono, monospace" font-size="10" fill="#4f5d75">Engine</text>
+
+      </svg>

@@ -50,26 +50,7 @@ Key characteristics:
 
 The following diagram illustrates data flow from upstream financial portals to consumers:
 
-```mermaid
-flowchart TD
-    Sources["Financial Portals<br>(ForexFactory / CryptoCraft / EnergyExch / MetalsMine)"]
-    HTTP["HTTP Engine<br>(cloudscraper session)"]
-    Parser["DOM Parser<br>(BeautifulSoup4)"]
-    Validation["Validation Pipeline<br>(Pydantic v2 EconomicEvent)"]
-
-    subgraph Consumers["Downstream Interfaces"]
-        CLI["CLI Tool<br>(forex-scraper)"]
-        SDK["Python SDK<br>(forex_pytory)"]
-        MCP["MCP Server<br>(forex-mcp stdio)"]
-    end
-
-    Sources -->|"HTML over HTTPS"| HTTP
-    HTTP -->|"DOM Content"| Parser
-    Parser -->|"Extracted Dictionary"| Validation
-    Validation -->|"Rich Table / JSON"| CLI
-    Validation -->|"list[EconomicEvent]"| SDK
-    Validation -->|"JSON-RPC Tool Response"| MCP
-```
+![Architecture: portals to HTTP engine, parser, validation, then CLI, SDK and MCP](docs/images/architecture.svg)
 
 ---
 

@@ -15,26 +15,7 @@ A Python library, CLI, and Model Context Protocol (MCP) server for extracting st
 
 ## Architecture Overview
 
-```mermaid
-flowchart TD
-    Sources["Financial Portals<br>(ForexFactory / CryptoCraft / EnergyExch / MetalsMine)"]
-    HTTP["HTTP Transport<br>(cloudscraper session)"]
-    Parser["DOM Parser<br>(BeautifulSoup4)"]
-    Validation["Validation Engine<br>(Pydantic v2 EconomicEvent)"]
-
-    subgraph Consumers["Interfaces"]
-        CLI["CLI Tool<br>(forex-scraper)"]
-        SDK["Python SDK<br>(forex_pytory)"]
-        MCP["MCP Server<br>(forex-mcp stdio)"]
-    end
-
-    Sources -->|"HTML over HTTPS"| HTTP
-    HTTP -->|"DOM Elements"| Parser
-    Parser -->|"Extracted Dicts"| Validation
-    Validation -->|"Formatted Output"| CLI
-    Validation -->|"list[EconomicEvent]"| SDK
-    Validation -->|"JSON-RPC Tool Response"| MCP
-```
+![Architecture: portals to HTTP engine, parser, validation, then CLI, SDK and MCP](images/architecture.svg)
 
 ---
 
